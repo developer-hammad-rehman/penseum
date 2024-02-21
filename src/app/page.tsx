@@ -7,7 +7,7 @@ export default function Home() {
    <h2 className='text-green-200'>Chat Bot Api</h2>
    <span className='flex'>
     <div>POST : </div>
-    http://penseum.vercel.app/api/chatbot
+    https://penseum.vercel.app/api/chatbot
     </span>
   </div>
    </div>
