@@ -9,7 +9,7 @@ try {
     });
     const chat = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages:[{role:"system" , content:`You Have to generate minimun 15 mcqs from this topic ${prompt} and also mark the correct question in it . if provided content is not ethical to generate quiz then give error that provide ethical content`}]
+      messages:[{role:"system" , content:`You Have to generate minimun 15 mcqs from this topic ${prompt} and also mark the correct question in it. If provided content is not enough to Genterate quiz then say please provide me meanigful content`}]
     });
     return NextResponse.json({message : chat.choices[0].message.content});
     }
