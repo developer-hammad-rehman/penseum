@@ -14,7 +14,7 @@ return (
    <h2 className='text-green-200'>Generate Quiz</h2>
    <span className='flex'>
     <div>POST : </div>
-    https://penseum.vercel.app/api/quiz
+    https://penseum.vercel.app/api/quiz-generater
     </span>
   </div>
    </div>

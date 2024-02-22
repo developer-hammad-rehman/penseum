@@ -1,6 +1,7 @@
+import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest , res:NextApiResponse) {
 try {
     const { prompt } = await req.json();
     if (prompt) {
@@ -9,7 +10,7 @@ try {
     });
     const chat = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages:[{role:"system" , content:`You Have to generate minimun 15 mcqs from this topic ${prompt} and also mark the correct question in it. If provided content is not enough to Genterate quiz then say please provide me meanigful content`}]
+      messages:[{role:"system" , content:`You Have to generate minimun 15 mcqs from this topic ${prompt} and also mark the correct question in it. If provided content is not enough to Genterate quiz then say please provide me meanigful content and very option contain 15 word plz to it fast`}]
     });
     return NextResponse.json({message : chat.choices[0].message.content});
     }
