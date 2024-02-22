@@ -10,7 +10,7 @@ try {
     });
     const chat = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages:[{role:"system" , content:`You Have to generate minimun 15 mcqs from this topic ${prompt} and also mark the correct question in it. If provided content is not enough to Genterate quiz then say please provide me meanigful content and very option contain 15 word plz to it fast`}]
+      messages:[{role:"system" , content:`You Have to generate minimun 15 mcqs from this topic ${prompt} and also mark the correct question in it. If provided content is not enough to Genterate quiz then say please provide me meanigful content and very option contain 5 word plz to it fast`}]
     });
     return NextResponse.json({message : chat.choices[0].message.content});
     }
